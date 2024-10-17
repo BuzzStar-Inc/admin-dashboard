@@ -11,7 +11,7 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormMessage,
+  FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
@@ -24,15 +24,15 @@ export type AuthFormProps = React.HTMLAttributes<HTMLDivElement>;
 const formSchema = z.object({
   email: z
     .string({
-      required_error: "Email is required",
+      required_error: "Email is required"
     })
     .min(1, "Email is required")
     .email("Invalid email"),
   password: z
     .string({
-      required_error: "Password is required",
+      required_error: "Password is required"
     })
-    .min(1, "Password is required"),
+    .min(1, "Password is required")
 });
 
 export function AuthForm({ className, ...props }: AuthFormProps) {
@@ -42,8 +42,8 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
-      password: "",
-    },
+      password: ""
+    }
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);

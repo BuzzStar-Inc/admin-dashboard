@@ -32,7 +32,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
       />
       <div className="relative flex flex-1 flex-col lg:ml-[18.125rem]">
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-        <main className="flex-grow p-6 md:overflow-y-auto lg:pr-12">
+        <main className="flex-grow p-6 md:overflow-y-auto lg:pr-12 bg-background">
           {children}
         </main>
       </div>
