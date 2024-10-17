@@ -99,9 +99,9 @@ const generateFormattedPhoneNumber = (): string => {
 }
 
 const generateEmailFromName = (name: string): string => {
-  const [firstName, lastName] = name.toLowerCase().split(' ')
-  const dominio = 'gmail.com'
-  return `${firstName}.${lastName}@${dominio}`
+  const [firstName] = name.toLowerCase().split(' ')
+  const dominio = 'kingtide.com'
+  return `${firstName}@${dominio}`
 }
 
 function generateRandomDate () {

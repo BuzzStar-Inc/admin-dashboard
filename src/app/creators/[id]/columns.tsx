@@ -46,7 +46,7 @@ const pastBuzzColumns: ColumnDef<Buzz>[] = [
   {
     accessorKey: 'recorded',
     header: 'Recorded',
-    cell: ({ row }) => (
+    cell: () => (
       <Badge variant='destructive'>
         <span className='bg-destructive-foreground rounded-full w-[9px] h-[9px] mr-1' />
         Recorded

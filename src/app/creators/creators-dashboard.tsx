@@ -133,7 +133,6 @@ export default function CreatorsDashboard () {
       <Tabs value={activeTab} onValueChange={setActiveTab} className='w-full'>
         <DataTabHeader
           activeTab={activeTab}
-          setActiveTab={setActiveTab}
           tabCounts={tabCounts}
         />
         <TabsContent value={activeTab}>

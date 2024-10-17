@@ -12,13 +12,11 @@ interface TabCounts {
 
 interface TabHeaderProps {
   activeTab: string
-  setActiveTab: (tab: string) => void
   tabCounts: TabCounts
 }
 
 const DataTabHeader: React.FC<TabHeaderProps> = ({
   activeTab,
-  setActiveTab,
   tabCounts
 }) => {
   return (

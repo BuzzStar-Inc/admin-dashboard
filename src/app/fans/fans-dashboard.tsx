@@ -20,13 +20,6 @@ import {
   getSortedRowModel,
   useReactTable
 } from '@tanstack/react-table'
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle
-} from '@/components/ui/dialog'
 import { Icons } from '@/components/ui/icons'
 import { DataTableFilter } from '../../components/table/data-table-filter'
 import { DataTableSearch } from '@/components/table/data-table-search'
@@ -139,7 +132,6 @@ export default function DataView () {
       <Tabs value={activeTab} onValueChange={setActiveTab} className='w-full'>
         <DataTabHeader
           activeTab={activeTab}
-          setActiveTab={setActiveTab}
           tabCounts={tabCounts}
         />
         <TabsContent value={activeTab}>

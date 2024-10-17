@@ -39,7 +39,7 @@ export const generateRandomData = (
     }
   ]
 
-  const CREATORS: Creator[] = Array.from({ length: count }, (_, i) => ({
+  const CREATORS: Creator[] = Array.from({ length: count }, () => ({
     name: generateRandomName(),
     phone: generateFormattedPhoneNumber(),
     avatar: getRandomLocalAvatar(),
@@ -49,7 +49,7 @@ export const generateRandomData = (
     )
   }))
 
-  const TOP_CREATORS: TopCreator[] = Array.from({ length: count }, (_, i) => ({
+  const TOP_CREATORS: TopCreator[] = Array.from({ length: count }, () => ({
     name: generateRandomName(),
     earnings: formatCurrency(Math.floor(Math.random() * 100000)),
     calls: Math.floor(Math.random() * 1000),
