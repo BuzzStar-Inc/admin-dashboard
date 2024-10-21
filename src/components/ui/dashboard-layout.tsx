@@ -1,9 +1,9 @@
-"use client";
-import { useState } from "react";
-import Sidebar from "@/components/ui/sidebar";
-import { Header } from "@/components/ui/header";
-import { Avenir } from "@/lib/custom-fonts";
-import { useRouter } from "next/navigation";
+'use client';
+import { useState } from 'react';
+import Sidebar from '@/components/ui/sidebar';
+import { Header } from '@/components/ui/header';
+import { Avenir } from '@/lib/custom-fonts';
+import { useRouter } from 'next/navigation';
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -17,7 +17,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      router.push("/");
+      router.push('/');
     }, 1000);
   };
   return (
@@ -32,7 +32,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
       />
       <div className="relative flex flex-1 flex-col lg:ml-[18.125rem]">
         <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-        <main className="flex-grow p-6 md:overflow-y-auto lg:pr-12">
+        <main className="flex-grow p-6 md:overflow-y-auto lg:pr-12 bg-background">
           {children}
         </main>
       </div>
@@ -40,6 +40,6 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   );
 };
 
-DashboardLayout.displayName = "Dashboard";
+DashboardLayout.displayName = 'Dashboard';
 
 export { DashboardLayout };

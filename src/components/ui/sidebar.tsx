@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { MENU_ITEMS } from "@/constants";
-import { Icons } from "@/components/ui/icons";
-import ClickOutside from "@/components/ui/click-outside";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { MENU_ITEMS } from '@/constants';
+import { Icons } from '@/components/ui/icons';
+import ClickOutside from '@/components/ui/click-outside';
 
 interface MenuItem {
   route: string;
@@ -30,8 +30,8 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({ item }) => {
         href={item.route}
         className={` ${
           isItemActive
-            ? "bg-primary text-primary-foreground"
-            : "text-muted-foreground"
+            ? 'bg-primary text-primary-foreground'
+            : 'text-muted-foreground'
         }  grid grid-cols-3rem-1fr items-center rounded-lg px-4 py-4 font-normal  duration-300 ease-in-out hover:bg-primary`}
       >
         {item.icon}
@@ -60,7 +60,7 @@ const ToggleButton: React.FC<{ onClick: () => void }> = ({ onClick }) => (
 
 interface SidebarProps {
   sidebarOpen: boolean;
-  setSidebarOpen: (arg: boolean) => void;
+  setSidebarOpen: (_arg: boolean) => void;
   onLogOut: () => void;
   isLoading: boolean;
 }
@@ -75,14 +75,14 @@ const Sidebar = ({
     <ClickOutside onClick={() => setSidebarOpen(false)}>
       <aside
         className={`bg-secondary min-h-screen h-full fixed left-0 top-0 z-20 flex w-[18.125rem] flex-col overflow-y-hidden bg-gray duration-300 ease-linear py-[2.5rem] px-[1.5rem] lg:translate-x-0 ${
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
         <div className="h-full overflow-y-auto  flex flex-col justify-between">
           <div className="h-full">
             <div className="flex items-center justify-between gap-2 px-6 pt-0 pb-[3rem]">
               <Link href="/" className="mx-auto">
-                <Icons.logo className="w-[10.6875rem] h-auto" />
+                <Icons.Logo className="w-[10.6875rem] h-auto" />
               </Link>
 
               <ToggleButton onClick={() => setSidebarOpen(!sidebarOpen)} />
@@ -104,10 +104,10 @@ const Sidebar = ({
               className="text-md text-normal  rounded-lg w-full px-4 py-2 flex  items-center gap-2.5 text-muted-foreground duration-300 ease-in-out  hover:text-primary-foreground"
               onClick={onLogOut}
             >
-              <Icons.logout />
+              <Icons.Logout />
               Logout
               {isLoading && (
-                <Icons.spinner className="animate-spin mr-2 h-4 w-4 text-blue" />
+                <Icons.Spinner className="animate-spin mr-2 h-4 w-4 text-blue" />
               )}
             </button>
           </div>

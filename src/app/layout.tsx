@@ -1,17 +1,15 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import { Avenir } from "@/lib/custom-fonts";
-
-
+import type { Metadata } from 'next';
+import './globals.css';
+import { Avenir } from '@/lib/custom-fonts';
 
 export const metadata: Metadata = {
-  title: "BuzzStar | Super Admin",
-  description: "Video call your favorite star",
+  title: 'BuzzStar | Super Admin',
+  description: 'Video call your favorite star',
   icons: {
     icon: [
       {
-        url: "/favicon.svg",
-        href: "/favicon.svg",
+        url: '/favicon.svg',
+        href: '/favicon.svg',
       },
     ],
   },

@@ -59,9 +59,18 @@ const config: Config = {
         blue: {
           DEFAULT: "hsl(var(--blue))",
 		  light: "hsl(var(--blue-light))",
+      dark: "hsl(var(--blue-dark))",
         },
+        gray:{
+          DEFAULT: "hsl(var(--gray))",
+          light: "hsl(var(--gray-light))",
+          medium: "hsl(var(--gray-medium))",
+          dark: "hsl(var(--gray-dark))",
+      
+        }
       },
       borderRadius: {
+        DEFAULT: "0.5rem",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",

@@ -1,38 +1,38 @@
-"use client";
+'use client';
 
-import * as React from "react";
+import * as React from 'react';
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import { Icons } from "@/components/ui/icons";
-import { Button } from "@/components/ui/button";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { Icons } from '@/components/ui/icons';
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { useRouter } from "next/navigation";
+  FormMessage
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { useRouter } from 'next/navigation';
 
-import { z } from "zod";
-import { cn } from "@/lib/utils";
+import { z } from 'zod';
+import { cn } from '@/lib/utils';
 
 export type AuthFormProps = React.HTMLAttributes<HTMLDivElement>;
 
 const formSchema = z.object({
   email: z
     .string({
-      required_error: "Email is required",
+      required_error: 'Email is required'
     })
-    .min(1, "Email is required")
-    .email("Invalid email"),
+    .min(1, 'Email is required')
+    .email('Invalid email'),
   password: z
     .string({
-      required_error: "Password is required",
+      required_error: 'Password is required'
     })
-    .min(1, "Password is required"),
+    .min(1, 'Password is required')
 });
 
 export function AuthForm({ className, ...props }: AuthFormProps) {
@@ -41,9 +41,9 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "",
-      password: "",
-    },
+      email: '',
+      password: ''
+    }
   });
   async function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
@@ -51,14 +51,14 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
     setIsLoading(true);
 
     setTimeout(() => {
-      router.push("/dashboard");
+      router.push('/dashboard');
     }, 200);
   }
 
   return (
     <div
       className={cn(
-        "my-3 grid min-h-[60vh]  w-full md:min-h-[26.3125rem] md:w-full max-w-[38.6875rem] px-2 py-[3rem] bg-primary  rounded-[0.9375rem] mx-[1rem]",
+        'my-3 grid min-h-[60vh]  w-full md:min-h-[26.3125rem] md:w-full max-w-[38.6875rem] px-2 py-[3rem] bg-primary  rounded-[0.9375rem] mx-[1rem]',
         className
       )}
       {...props}
@@ -121,7 +121,7 @@ export function AuthForm({ className, ...props }: AuthFormProps) {
             disabled={isLoading}
           >
             {isLoading && (
-              <Icons.spinner className="mr-2 h-4 w-4 animate-spin text-secondary-foreground" />
+              <Icons.Spinner className="mr-2 h-4 w-4 animate-spin text-secondary-foreground" />
             )}
             Sign In
           </Button>

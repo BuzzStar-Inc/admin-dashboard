@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { Icons } from "@/components/ui/icons";
+import { ReactNode } from 'react';
+import { Icons } from '@/components/ui/icons';
 
 interface MenuItem {
   icon: ReactNode;
@@ -9,24 +9,24 @@ interface MenuItem {
 
 export const MENU_ITEMS: MenuItem[] = [
   {
-    icon: <Icons.dashboard className=" m-auto" />,
-    label: "Dashboard",
-    route: "/dashboard",
+    icon: <Icons.Dashboard className=" m-auto" />,
+    label: 'Dashboard',
+    route: '/dashboard',
   },
   {
-    icon: <Icons.creators className=" m-auto" />,
-    label: "Creators",
-    route: "/creators",
+    icon: <Icons.Creators className=" m-auto" />,
+    label: 'Creators',
+    route: '/creators',
   },
   {
-    icon: <Icons.person className=" m-auto" />,
-    label: "Fans",
-    route: "/fans",
+    icon: <Icons.Person className=" m-auto" />,
+    label: 'Fans',
+    route: '/fans',
   },
 
   {
-    icon: <Icons.payment className=" m-auto" />,
-    label: "Payments",
-    route: "/payments",
+    icon: <Icons.Payment className=" m-auto" />,
+    label: 'Payments',
+    route: '/payments',
   },
 ];
