@@ -1,11 +1,11 @@
-import { ColumnDef } from '@tanstack/react-table'
-import { Checkbox } from '@/components/ui/checkbox'
-import { DataTableColumnHeader } from '@/components/table/data-table-column-header'
-import Image from 'next/image'
-import { Badge } from '@/components/ui/badge'
-import { Icons } from '@/components/ui/icons'
-import { Button } from '@/components/ui/button'
-import { Payment } from './types'
+import { ColumnDef } from '@tanstack/react-table';
+import { Checkbox } from '@/components/ui/checkbox';
+import { DataTableColumnHeader } from '@/components/table/data-table-column-header';
+import Image from 'next/image';
+import { Badge } from '@/components/ui/badge';
+import { Icons } from '@/components/ui/icons';
+import { Button } from '@/components/ui/button';
+import { Payment } from './types';
 
 export const columnsPayments: ColumnDef<Payment>[] = [
   {
@@ -31,7 +31,7 @@ export const columnsPayments: ColumnDef<Payment>[] = [
   {
     accessorKey: 'creatorName',
     header: ({ column }) => {
-      return <DataTableColumnHeader column={column} title='Creator Name' />
+      return <DataTableColumnHeader column={column} title='Creator Name' />;
     },
     cell: ({ row }) => (
       <div className='flex items-center space-x-3'>
@@ -49,7 +49,7 @@ export const columnsPayments: ColumnDef<Payment>[] = [
   {
     accessorKey: 'fanName',
     header: ({ column }) => {
-      return <DataTableColumnHeader column={column} title='Fan Name' />
+      return <DataTableColumnHeader column={column} title='Fan Name' />;
     },
     cell: ({ row }) => (
       <div className='flex items-center space-x-3'>
@@ -67,40 +67,40 @@ export const columnsPayments: ColumnDef<Payment>[] = [
   {
     accessorKey: 'status',
     header: ({ column }) => {
-      return <DataTableColumnHeader column={column} title='Status' />
+      return <DataTableColumnHeader column={column} title='Status' />;
     },
     cell: ({ row }) => (
       <Badge className='bg-blue-light text-blue-dark font-medium gap-1 text-sm py-[1px] hover:bg-blue-light/80'>
-        {row.original.status === 'Processed' && <Icons.verified />}
+        {row.original.status === 'Processed' && <Icons.Verified />}
 
         {row.getValue('status')}
       </Badge>
     ),
     filterFn: (row, id, value) => {
-      console.log(row, id, value)
-      return value.includes(row.getValue(id))
+      console.log(row, id, value);
+      return value.includes(row.getValue(id));
     }
   },
   {
     accessorKey: 'amount',
     header: ({ column }) => {
-      return <DataTableColumnHeader column={column} title='Amount' />
+      return <DataTableColumnHeader column={column} title='Amount' />;
     },
     cell: ({ row }) => (
       <div className='text-right max-w-[100px]'>${row.getValue('amount')}</div>
     ),
     filterFn: (row, id, value: string[]) => {
-      const spent = row.getValue(id) as number
+      const spent = row.getValue(id) as number;
       return value.some((range: string) => {
-        const [min, max] = range.split('-').map(Number)
-        return spent >= min && spent <= max
-      })
+        const [min, max] = range.split('-').map(Number);
+        return spent >= min && spent <= max;
+      });
     }
   },
   {
     accessorKey: 'date',
     header: ({ column }) => {
-      return <DataTableColumnHeader column={column} title='Date' />
+      return <DataTableColumnHeader column={column} title='Date' />;
     }
   },
   {
@@ -118,4 +118,4 @@ export const columnsPayments: ColumnDef<Payment>[] = [
       </div>
     )
   }
-]
+];

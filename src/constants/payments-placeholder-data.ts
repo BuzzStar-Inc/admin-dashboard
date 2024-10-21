@@ -1,7 +1,6 @@
 
-import { Payment } from "@/app/payments/types";
-import { getRandomLocalAvatar, generateRandomName, generateRandomDate } from "@/lib/random-data";
-
+import { Payment } from '@/app/payments/types';
+import { getRandomLocalAvatar, generateRandomName, generateRandomDate } from '@/lib/random-data';
 
 const generatePaymentData = (count: number): Payment[] => {
     return Array.from({ length: count }, (_, i) => {
@@ -13,13 +12,11 @@ const generatePaymentData = (count: number): Payment[] => {
         creatorAvatar: getRandomLocalAvatar(),
         fanName,
         fanAvatar: getRandomLocalAvatar(),
-        status: Math.random() > 0.5 ? "Pending" : "Processed",
+        status: Math.random() > 0.5 ? 'Pending' : 'Processed',
         amount: Math.floor(Math.random() * 10000),
         date: generateRandomDate(),
       };
     });
   };
   
-  
-  
-  export {generatePaymentData}
+  export {generatePaymentData};

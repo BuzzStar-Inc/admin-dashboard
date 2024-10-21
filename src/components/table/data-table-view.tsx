@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Table,
   TableBody,
@@ -6,23 +6,23 @@ import {
   TableHead,
   TableHeader,
   TableRow
-} from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Icons } from "@/components/ui/icons";
-import Image from "next/image";
-import Link from "next/link";
-import { SocialIcons } from "@/constants";
+} from '@/components/ui/table';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Icons } from '@/components/ui/icons';
+import Image from 'next/image';
+import Link from 'next/link';
+import { SocialIcons } from '@/constants';
 import {
   flexRender,
   ColumnDef,
   Table as TableDef
-} from "@tanstack/react-table";
+} from '@tanstack/react-table';
 
 interface DataTableProps {
   table: TableDef<any>;
   columns: ColumnDef<any, any>[];
-  viewType: "list" | "grid";
+  viewType: 'list' | 'grid';
 }
 
 const DataTableView: React.FC<DataTableProps> = ({
@@ -30,7 +30,7 @@ const DataTableView: React.FC<DataTableProps> = ({
   columns,
   viewType
 }) => {
-  if (viewType === "list") {
+  if (viewType === 'list') {
     return (
       <div className="rounded-md border">
         <Table>
@@ -58,7 +58,7 @@ const DataTableView: React.FC<DataTableProps> = ({
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
+                  data-state={row.getIsSelected() && 'selected'}
                 >
                   {row.getVisibleCells().map((cell) => (
                     <TableCell key={cell.id} className="text-base py-3">
@@ -124,9 +124,9 @@ const DataTableView: React.FC<DataTableProps> = ({
                   {row.original.name || row.original.fanName}
                 </h3>
                 <Badge className="bg-blue-light text-blue-dark font-medium gap-1 text-sm py-[1px] hover:bg-blue-light/80">
-                  {row.original.status === "Active" ||
-                    (row.original.status === "Processed" && (
-                      <Icons.verified className="w-4 h-4 mr-1" />
+                  {row.original.status === 'Active' ||
+                    (row.original.status === 'Processed' && (
+                      <Icons.Verified className="w-4 h-4 mr-1" />
                     ))}
                   {row.original.status}
                 </Badge>
@@ -147,13 +147,13 @@ const DataTableView: React.FC<DataTableProps> = ({
               )}
                   {row.original.videoCalls && (
                 <p className="text-sm text-gray-600">
-                  <span className="font-medium">Video Calls:</span>{" "} 
+                  <span className="font-medium">Video Calls:</span>{' '} 
                   {row.original.videoCalls}
                 </p>
               )}
                     {row.original.email && (
              <p className="text-sm text-gray-600">
-             <span className="font-medium">Email:</span> {" "}
+             <span className="font-medium">Email:</span> {' '}
              {row.original.email}
            </p>
               )}
@@ -165,7 +165,7 @@ const DataTableView: React.FC<DataTableProps> = ({
               )}
               {row.original.phoneNumber && (
                 <p className="text-sm text-gray-600">
-                  <span className="font-medium">Phone:</span>{" "}
+                  <span className="font-medium">Phone:</span>{' '}
                   {row.original.phoneNumber}
                 </p>
               )}
@@ -191,14 +191,14 @@ const DataTableView: React.FC<DataTableProps> = ({
                   ? `/creators/${row.original.id}`
                   : row.original.email
                   ? `/fans/${row.original.id}`
-                  : "#"
+                  : '#'
               }`}
             >
               <Button variant="link" size="xs">
                 View
               </Button>
             </Link>
-            {row.original.status === "New Applicant" && row.original.socials && (
+            {row.original.status === 'New Applicant' && row.original.socials && (
               <Button variant="action" size="xs">
                 Approve
               </Button>
@@ -215,6 +215,6 @@ const DataTableView: React.FC<DataTableProps> = ({
   );
 };
 
-DataTableView.displayName = "DataViewToogle";
+DataTableView.displayName = 'DataViewToogle';
 
 export { DataTableView };

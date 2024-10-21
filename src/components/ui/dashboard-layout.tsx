@@ -1,9 +1,9 @@
-"use client";
-import { useState } from "react";
-import Sidebar from "@/components/ui/sidebar";
-import { Header } from "@/components/ui/header";
-import { Avenir } from "@/lib/custom-fonts";
-import { useRouter } from "next/navigation";
+'use client';
+import { useState } from 'react';
+import Sidebar from '@/components/ui/sidebar';
+import { Header } from '@/components/ui/header';
+import { Avenir } from '@/lib/custom-fonts';
+import { useRouter } from 'next/navigation';
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -17,7 +17,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-      router.push("/");
+      router.push('/');
     }, 1000);
   };
   return (
@@ -40,6 +40,6 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   );
 };
 
-DashboardLayout.displayName = "Dashboard";
+DashboardLayout.displayName = 'Dashboard';
 
 export { DashboardLayout };

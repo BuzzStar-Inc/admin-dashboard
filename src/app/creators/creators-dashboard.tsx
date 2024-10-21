@@ -1,15 +1,15 @@
-'use client'
+'use client';
 
-import { useState, useEffect, useMemo } from 'react'
-import { Tabs, TabsContent } from '@/components/ui/tabs'
-import { Button } from '@/components/ui/button'
-import { PinBottomIcon, Cross2Icon } from '@radix-ui/react-icons'
+import { useState, useEffect, useMemo } from 'react';
+import { Tabs, TabsContent } from '@/components/ui/tabs';
+import { Button } from '@/components/ui/button';
+import { PinBottomIcon, Cross2Icon } from '@radix-ui/react-icons';
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,
   DropdownMenuTrigger
-} from '@/components/ui/dropdown-menu'
+} from '@/components/ui/dropdown-menu';
 import {
   ColumnFiltersState,
   SortingState,
@@ -19,52 +19,52 @@ import {
   getPaginationRowModel,
   getSortedRowModel,
   useReactTable
-} from '@tanstack/react-table'
+} from '@tanstack/react-table';
 
-import { Icons } from '@/components/ui/icons'
-import { DataTableFilter } from '../../components/table/data-table-filter'
-import { DataTableSearch } from '@/components/table/data-table-search'
-import { CustomPagination } from '@/components/ui/custom-pagination'
-import { Creator } from './types'
-import { columnsCreators } from './columns'
+import { Icons } from '@/components/ui/icons';
+import { DataTableFilter } from '../../components/table/data-table-filter';
+import { DataTableSearch } from '@/components/table/data-table-search';
+import { CustomPagination } from '@/components/ui/custom-pagination';
+import { Creator } from './types';
+import { columnsCreators } from './columns';
 import { generateCreatorsData } from '@/constants';
-import { DataViewToggle } from '@/components/table/data-view-toogle'
-import { DataTabHeader } from '@/components/table/data-tab-header'
-import { DataTableView } from '@/components/table/data-table-view'
-import { exportToCSV } from '@/lib/csvExport'
-import { DataLoadingSkeleton } from '@/components/table/data-loading-skeleton'
-import { DialogNoRows } from '@/components/table/data-dialog-no-rows'
+import { DataViewToggle } from '@/components/table/data-view-toogle';
+import { DataTabHeader } from '@/components/table/data-tab-header';
+import { DataTableView } from '@/components/table/data-table-view';
+import { exportToCSV } from '@/lib/csvExport';
+import { DataLoadingSkeleton } from '@/components/table/data-loading-skeleton';
+import { DialogNoRows } from '@/components/table/data-dialog-no-rows';
 
 export default function CreatorsDashboard () {
-  const [activeTab, setActiveTab] = useState('all')
-  const [allData, setAllData] = useState<Creator[]>([])
-  const [sorting, setSorting] = useState<SortingState>([])
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
-  const [rowSelection, setRowSelection] = useState({})
-  const [globalFilter, setGlobalFilter] = useState('')
-  const [viewType, setViewType] = useState<'list' | 'grid'>('list')
-  const [isLoading, setIsLoading] = useState(true)
-  const [showNoSelectionDialog, setShowNoSelectionDialog] = useState(false)
+  const [activeTab, setActiveTab] = useState('all');
+  const [allData, setAllData] = useState<Creator[]>([]);
+  const [sorting, setSorting] = useState<SortingState>([]);
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
+  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  const [rowSelection, setRowSelection] = useState({});
+  const [globalFilter, setGlobalFilter] = useState('');
+  const [viewType, setViewType] = useState<'list' | 'grid'>('list');
+  const [isLoading, setIsLoading] = useState(true);
+  const [showNoSelectionDialog, setShowNoSelectionDialog] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     const timer = setTimeout(() => {
-      const generatedData = generateCreatorsData(100)
-      setAllData(generatedData)
-      setIsLoading(false)
-    }, 1000)
+      const generatedData = generateCreatorsData(100);
+      setAllData(generatedData);
+      setIsLoading(false);
+    }, 1000);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   const filteredData = useMemo(() => {
-    if (activeTab === 'all') return allData
+    if (activeTab === 'all') return allData;
     return allData.filter(
       person =>
         person.status.toLowerCase().replace(' ', '') === activeTab.toLowerCase()
-    )
-  }, [allData, activeTab])
+    );
+  }, [allData, activeTab]);
 
   const table = useReactTable({
     data: filteredData,
@@ -89,34 +89,34 @@ export default function CreatorsDashboard () {
         pageSize: 12
       }
     }
-  })
+  });
 
   const isFiltered = useMemo(() => {
     return (
       table.getState().columnFilters.length > 0 ||
       table.getState().globalFilter !== ''
-    )
-  }, [table.getState().columnFilters, table.getState().globalFilter])
+    );
+  }, [table.getState().columnFilters, table.getState().globalFilter]);
 
   const tabCounts = useMemo(() => {
     return {
       all: allData.length,
       active: allData.filter(row => row.status === 'Active').length,
       newApplicant: allData.filter(row => row.status === 'New Applicant').length
-    }
-  }, [allData])
+    };
+  }, [allData]);
 
   const handleExportCSV = () => {
     exportToCSV(table, {
       fileName: 'selected_creators_export.csv',
       onNoSelection: () => setShowNoSelectionDialog(true)
-    })
-  }
+    });
+  };
 
   const resetFilters = () => {
-    table.resetColumnFilters()
-    setGlobalFilter('')
-  }
+    table.resetColumnFilters();
+    setGlobalFilter('');
+  };
 
   if (isLoading) {
     return (
@@ -124,7 +124,7 @@ export default function CreatorsDashboard () {
         <h2 className='text-2xl font-semibold mb-6'>Creators</h2>
         <DataLoadingSkeleton />
       </div>
-    )
+    );
   }
 
   return (
@@ -181,7 +181,7 @@ export default function CreatorsDashboard () {
                     variant='outline'
                     className='ml-auto text-sm bg-gray-light text-foreground h-8 hover:bg-gray-light/80'
                   >
-                    <Icons.eye className='mr-1' /> Columns
+                    <Icons.Eye className='mr-1' /> Columns
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align='end'>
@@ -200,7 +200,7 @@ export default function CreatorsDashboard () {
                         >
                           {column.id}
                         </DropdownMenuCheckboxItem>
-                      )
+                      );
                     })}
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -237,5 +237,5 @@ export default function CreatorsDashboard () {
         onOpenChange={setShowNoSelectionDialog}
       />
     </div>
-  )
+  );
 }

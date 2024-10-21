@@ -1,5 +1,5 @@
-import React from 'react'
-import { Button } from '@/components/ui/button'
+import React from 'react';
+import { Button } from '@/components/ui/button';
 
 import {
   Dialog,
@@ -7,11 +7,11 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle
-} from '@/components/ui/dialog'
+} from '@/components/ui/dialog';
 
 interface DialogNoRowsProps {
   open: boolean
-  onOpenChange: (arg0: boolean) => void
+  onOpenChange: (_arg0: boolean) => void
 }
 
 const DialogNoRows: React.FC<DialogNoRowsProps> = ({ open, onOpenChange }) => (
@@ -28,8 +28,8 @@ const DialogNoRows: React.FC<DialogNoRowsProps> = ({ open, onOpenChange }) => (
       </div>
     </DialogContent>
   </Dialog>
-)
+);
 
-DialogNoRows.displayName = 'DialogNoRows'
+DialogNoRows.displayName = 'DialogNoRows';
 
-export { DialogNoRows }
+export { DialogNoRows };

@@ -1,8 +1,8 @@
-import React from 'react'
-import { TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
-import { PlusIcon } from '@radix-ui/react-icons'
+import React from 'react';
+import { TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { PlusIcon } from '@radix-ui/react-icons';
 
 interface TabCounts {
   all: number
@@ -55,9 +55,9 @@ const DataTabHeader: React.FC<TabHeaderProps> = ({
         Invite Member
       </Button>
     </div>
-  )
-}
+  );
+};
 
-DataTabHeader.displayName = 'DataTabHeader'
+DataTabHeader.displayName = 'DataTabHeader';
 
-export { DataTabHeader }
+export { DataTabHeader };

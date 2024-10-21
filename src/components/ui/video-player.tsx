@@ -2,12 +2,10 @@ import React, { useState, useRef, useEffect } from 'react';
 import {  Volume2, VolumeX } from 'lucide-react';
 import { Icons } from './icons';
 
-
 interface VideoPlayerProps {
   src: string
   onLoadedData?: () => void
 }
-
 
 export const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, onLoadedData }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -108,7 +106,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ src, onLoadedData }) =
           className="absolute inset-0 flex items-center justify-center cursor-pointer"
           onClick={togglePlay}
         >
-          {!isPlaying && <Icons.play  />}
+          {!isPlaying && <Icons.Play  />}
         </div>
       </div>
       <div className="mt-4 flex items-center">

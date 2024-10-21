@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import { ColumnDef } from '@tanstack/react-table'
-import { Buzz } from './types'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
-import { CreatorDetailsModal } from './creator-details-modal'
+import { useState } from 'react';
+import { ColumnDef } from '@tanstack/react-table';
+import { Buzz } from './types';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { CreatorDetailsModal } from './creator-details-modal';
 
 const pastBuzzColumns: ColumnDef<Buzz>[] = [
   {
     accessorKey: 'name',
     header: 'Fan Name',
     cell: ({ row }) => {
-      const name = row.getValue('name') as string | undefined // Asegúrate de que TypeScript lo reconozca
+      const name = row.getValue('name') as string | undefined;
       return (
         <div className='flex items-center space-x-2'>
           <Avatar>
@@ -27,7 +27,7 @@ const pastBuzzColumns: ColumnDef<Buzz>[] = [
           </Avatar>
           <span>{name}</span>
         </div>
-      )
+      );
     }
   },
 
@@ -61,7 +61,7 @@ const pastBuzzColumns: ColumnDef<Buzz>[] = [
     id: 'actions',
     header: 'Action',
     cell: ({ row }) => {
-      const [isModalOpen, setIsModalOpen] = useState(false)
+      const [isModalOpen, setIsModalOpen] = useState(false);
 
       return (
         <>
@@ -74,9 +74,9 @@ const pastBuzzColumns: ColumnDef<Buzz>[] = [
             onClose={() => setIsModalOpen(false)}
           />
         </>
-      )
+      );
     }
   }
-]
+];
 
-export { pastBuzzColumns }
+export { pastBuzzColumns };

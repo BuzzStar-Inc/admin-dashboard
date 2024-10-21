@@ -1,30 +1,30 @@
-"use client";
+'use client';
 
-import React, { useState, useEffect } from "react";
-import { format, subMonths, subYears, isBefore, isAfter } from "date-fns";
-import { Calendar as CalendarIcon, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar } from "@/components/ui/calendar";
+import React, { useState, useEffect } from 'react';
+import { format, subMonths, subYears, isBefore, isAfter } from 'date-fns';
+import { Calendar as CalendarIcon, ChevronDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Calendar } from '@/components/ui/calendar';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger
-} from "@/components/ui/popover";
-import { DataTable } from "@/app/dashboard/data-table";
-import { StatCard } from "@/app/dashboard/stat-card";
+} from '@/components/ui/popover';
+import { DataTable } from '@/app/dashboard/data-table';
+import { StatCard } from '@/app/dashboard/stat-card';
 import {
   TimeRange,
   Creator,
   TopCreator,
   Stat as StatCardType
-} from "@/app/dashboard/types";
-import { creatorColumns, topCreatorColumns } from "@/app/dashboard/columns";
-import { generateRandomData } from "@/constants";
-import { LoadingSkeleton } from "@/app/dashboard/loading-skeleton";
+} from '@/app/dashboard/types';
+import { creatorColumns, topCreatorColumns } from '@/app/dashboard/columns';
+import { generateRandomData } from '@/constants';
+import { LoadingSkeleton } from '@/app/dashboard/loading-skeleton';
 
 export default function StatisticsDashboard() {
-  const [timeRange, setTimeRange] = useState<TimeRange>("all");
+  const [timeRange, setTimeRange] = useState<TimeRange>('all');
   const [dateRange, setDateRange] = useState<{ from: Date; to: Date }>({
     from: new Date(),
     to: new Date()
@@ -41,13 +41,13 @@ export default function StatisticsDashboard() {
       let endDate = new Date();
 
       switch (timeRange) {
-        case "month":
+        case 'month':
           startDate = subMonths(endDate, 1);
           break;
-        case "year":
+        case 'year':
           startDate = subYears(endDate, 1);
           break;
-        case "custom":
+        case 'custom':
           startDate = dateRange.from;
           endDate = dateRange.to || endDate;
           break;
@@ -88,24 +88,24 @@ export default function StatisticsDashboard() {
         <Button
           className="border-none"
           size="lg"
-          variant={timeRange === "all" ? "secondary" : "outline"}
-          onClick={() => setTimeRange("all")}
+          variant={timeRange === 'all' ? 'secondary' : 'outline'}
+          onClick={() => setTimeRange('all')}
         >
           All Time
         </Button>
         <Button
           className="border-none"
           size="lg"
-          variant={timeRange === "month" ? "secondary" : "outline"}
-          onClick={() => setTimeRange("month")}
+          variant={timeRange === 'month' ? 'secondary' : 'outline'}
+          onClick={() => setTimeRange('month')}
         >
           This Month
         </Button>
         <Button
           className="border-none"
           size="lg"
-          variant={timeRange === "year" ? "secondary" : "outline"}
-          onClick={() => setTimeRange("year")}
+          variant={timeRange === 'year' ? 'secondary' : 'outline'}
+          onClick={() => setTimeRange('year')}
         >
           This Year
         </Button>
@@ -114,14 +114,14 @@ export default function StatisticsDashboard() {
             <Button
               size="lg"
               className="border-none"
-              variant={timeRange === "custom" ? "default" : "outline"}
+              variant={timeRange === 'custom' ? 'default' : 'outline'}
             >
               <CalendarIcon className="mr-2 h-4 w-4" />
-              {timeRange === "custom"
-                ? `${format(dateRange.from, "LLL dd, y")} - ${
-                    dateRange.to ? format(dateRange.to, "LLL dd, y") : ""
+              {timeRange === 'custom'
+                ? `${format(dateRange.from, 'LLL dd, y')} - ${
+                    dateRange.to ? format(dateRange.to, 'LLL dd, y') : ''
                   }`
-                : "Custom"}
+                : 'Custom'}
               <ChevronDown className="ml-2 h-auto w-4 mt-1" />
             </Button>
           </PopoverTrigger>
@@ -137,7 +137,7 @@ export default function StatisticsDashboard() {
                     from: newDateRange.from,
                     to: newDateRange.to
                   });
-                  setTimeRange("custom");
+                  setTimeRange('custom');
                 }
               }}
               numberOfMonths={2}

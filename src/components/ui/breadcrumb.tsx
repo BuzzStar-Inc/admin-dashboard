@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { Icons } from "@/components/ui/icons";
+import { Icons } from '@/components/ui/icons';
 
 interface BreadcrumbProps {
   previousPageName: string
@@ -21,20 +21,20 @@ function Breadcrumb({
   iconClassName,
   textClassName
 }: BreadcrumbProps) {
-  const router = useRouter()
+  const router = useRouter();
 
   const handleBack = () => {
     if (previousPageUrl) {
-      router.push(previousPageUrl)
+      router.push(previousPageUrl);
     } else {
-      router.back()
+      router.back();
     }
-  }
+  };
 
   return (
     <nav 
       className={cn(
-        "flex items-center space-x-2 mb-4 cursor-pointer",
+        'flex items-center space-x-2 mb-4 cursor-pointer',
         className
       )} 
       aria-label="Breadcrumb"
@@ -42,19 +42,19 @@ function Breadcrumb({
       <button
         onClick={handleBack}
         className={cn(
-          "text-sm font-medium text-foreground hover:text-gray-800 flex items-center",
+          'text-sm font-medium text-foreground hover:text-gray-800 flex items-center',
           buttonClassName
         )}
       >
-        <Icons.back className={cn("mr-2", iconClassName)} />
+        <Icons.Back className={cn('mr-2', iconClassName)} />
         <h2 className={cn('text-2xl font-semibold', textClassName)}>
           {previousPageName}
         </h2>
       </button>
     </nav>
-  )
+  );
 }
 
-Breadcrumb.displayName = "Breadcrumb"
+Breadcrumb.displayName = 'Breadcrumb';
 
-export { Breadcrumb }
+export { Breadcrumb };

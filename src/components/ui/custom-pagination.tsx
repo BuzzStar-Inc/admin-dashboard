@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import {
   Pagination,
   PaginationContent,
@@ -7,55 +7,54 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination"
+} from '@/components/ui/pagination';
 
 interface PaginationProps {
   currentPage: number
   totalPages: number
-  onPageChange: (page: number) => void
+  onPageChange: (_page: number) => void
 }
 
 export  function CustomPagination({ currentPage, totalPages, onPageChange }: PaginationProps) {
   const getPageNumbers = () => {
-    const pageNumbers = []
-    const maxPagesToShow = 7 
+    const pageNumbers = [];
+    const maxPagesToShow = 7; 
 
     if (totalPages <= maxPagesToShow) {
 
       for (let i = 1; i <= totalPages; i++) {
-        pageNumbers.push(i)
+        pageNumbers.push(i);
       }
     } else {
      
-      pageNumbers.push(1)
+      pageNumbers.push(1);
 
       if (currentPage <= 3) {
       
         for (let i = 2; i <= 5; i++) {
-          pageNumbers.push(i)
+          pageNumbers.push(i);
         }
-        pageNumbers.push('ellipsis')
+        pageNumbers.push('ellipsis');
       } else if (currentPage >= totalPages - 2) {
        
-        pageNumbers.push('ellipsis')
+        pageNumbers.push('ellipsis');
         for (let i = totalPages - 4; i < totalPages; i++) {
-          pageNumbers.push(i)
+          pageNumbers.push(i);
         }
       } else {
      
-        pageNumbers.push('ellipsis')
+        pageNumbers.push('ellipsis');
         for (let i = currentPage - 1; i <= currentPage + 1; i++) {
-          pageNumbers.push(i)
+          pageNumbers.push(i);
         }
-        pageNumbers.push('ellipsis')
+        pageNumbers.push('ellipsis');
       }
-
      
-      pageNumbers.push(totalPages)
+      pageNumbers.push(totalPages);
     }
 
-    return pageNumbers
-  }
+    return pageNumbers;
+  };
 
   return (
     <Pagination>
@@ -64,8 +63,8 @@ export  function CustomPagination({ currentPage, totalPages, onPageChange }: Pag
           <PaginationPrevious
             href="#"
             onClick={(e) => {
-              e.preventDefault()
-              if (currentPage > 1) onPageChange(currentPage - 1)
+              e.preventDefault();
+              if (currentPage > 1) onPageChange(currentPage - 1);
             }}
             aria-disabled={currentPage === 1}
           />
@@ -78,8 +77,8 @@ export  function CustomPagination({ currentPage, totalPages, onPageChange }: Pag
               <PaginationLink
                 href="#"
                 onClick={(e) => {
-                  e.preventDefault()
-                  onPageChange(page as number)
+                  e.preventDefault();
+                  onPageChange(page as number);
                 }}
                 isActive={currentPage === page}
               >
@@ -92,13 +91,13 @@ export  function CustomPagination({ currentPage, totalPages, onPageChange }: Pag
           <PaginationNext
             href="#"
             onClick={(e) => {
-              e.preventDefault()
-              if (currentPage < totalPages) onPageChange(currentPage + 1)
+              e.preventDefault();
+              if (currentPage < totalPages) onPageChange(currentPage + 1);
             }}
             aria-disabled={currentPage === totalPages}
           />
         </PaginationItem>
       </PaginationContent>
     </Pagination>
-  )
+  );
 }

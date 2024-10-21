@@ -1,6 +1,5 @@
 
-
-export type TimeRange = "all" | "month" | "year" | "custom";
+export type TimeRange = 'all' | 'month' | 'year' | 'custom';
 
 export type Stat = {
   title: string;
@@ -21,5 +20,3 @@ export type TopCreator = {
   avatar: string;  
   date: Date;
 };
-
-

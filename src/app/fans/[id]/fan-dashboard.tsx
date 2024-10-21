@@ -1,12 +1,12 @@
-"use client";
-import React, { useEffect } from "react";
-import { generateCreatorData } from "@/constants";
-import { DataTable } from "@/app/dashboard/data-table";
-import ProfileCard from "./profile-card";
-import { Buzz } from "./types";
-import { pastBuzzColumns } from "./columns";
-import { Breadcrumb } from "@/components/ui/breadcrumb";
-import { TableLoadingSkeleton } from "@/components/table/data-loading-skeleton";
+'use client';
+import React, { useEffect } from 'react';
+import { generateCreatorData } from '@/constants';
+import { DataTable } from '@/app/dashboard/data-table';
+import ProfileCard from './profile-card';
+import { Buzz } from './types';
+import { pastBuzzColumns } from './columns';
+import { Breadcrumb } from '@/components/ui/breadcrumb';
+import { TableLoadingSkeleton } from '@/components/table/data-loading-skeleton';
 
 export default function ProfileView() {
   const [data, setData] = React.useState<Buzz[]>([]);
@@ -19,7 +19,7 @@ export default function ProfileView() {
         const result = generateCreatorData(50);
         setData(result);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error('Error fetching data:', error);
       } finally {
         setIsLoading(false);
       }

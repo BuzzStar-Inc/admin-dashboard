@@ -1,6 +1,6 @@
-import * as React from "react";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-import { Input } from "@/components/ui/input";
+import * as React from 'react';
+import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
+import { Input } from '@/components/ui/input';
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -8,7 +8,7 @@ export interface InputProps
 }
 
 const DataTableSearchComponent = (
-  { className = "", type, icon = true, ...props }: InputProps,
+  { className = '', type, icon = true, ...props }: InputProps,
   ref: React.Ref<HTMLInputElement>
 ) => {
   return (
@@ -27,6 +27,6 @@ const DataTableSearchComponent = (
   );
 };
 
-DataTableSearchComponent.displayName = "DataTableSearch";
+DataTableSearchComponent.displayName = 'DataTableSearch';
 
 export const DataTableSearch = React.forwardRef(DataTableSearchComponent);

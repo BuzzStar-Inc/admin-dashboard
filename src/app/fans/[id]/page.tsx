@@ -1,11 +1,10 @@
-import { DashboardLayout as Layout } from "@/components/ui/dashboard-layout";
-import FanDashboard from "./fan-dashboard";
+import { DashboardLayout as Layout } from '@/components/ui/dashboard-layout';
+import FanDashboard from './fan-dashboard';
 
-
-import { Metadata } from "next";
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "BuzzStar | Fan Profile"
+  title: 'BuzzStar | Fan Profile'
 };
 
 export default function ProfileView() {

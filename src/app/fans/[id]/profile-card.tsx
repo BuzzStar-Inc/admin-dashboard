@@ -1,7 +1,7 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Icons } from "@/components/ui/icons";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from '@/components/ui/card';
+import { Icons } from '@/components/ui/icons';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 export default function FanProfileCard(){
     return(
@@ -16,7 +16,7 @@ export default function FanProfileCard(){
                 className="rounded-full w-44 h-44 object-cover"
               />
               <Badge className="absolute bottom-0 left-0 right-0 w-fit mx-auto bg-blue-light text-blue-dark font-medium gap-1 text-sm py-2 hover:bg-blue-light rounded-[128px] px-4">
-                <Icons.verified className="w-4 h-4 mr-1" /> Active
+                <Icons.Verified className="w-4 h-4 mr-1" /> Active
               </Badge>
             </div>
 
@@ -46,5 +46,5 @@ export default function FanProfileCard(){
           </div>
         </CardContent>
       </Card>
-    )
+    );
 }

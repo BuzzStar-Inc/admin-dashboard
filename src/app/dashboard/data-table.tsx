@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   ColumnDef,
   flexRender,
@@ -7,8 +7,8 @@ import {
   getPaginationRowModel,
   SortingState,
   getSortedRowModel
-} from "@tanstack/react-table";
-import { Button } from "@/components/ui/button";
+} from '@tanstack/react-table';
+import { Button } from '@/components/ui/button';
 import {
   Table,
   TableBody,
@@ -16,7 +16,7 @@ import {
   TableHead,
   TableHeader,
   TableRow
-} from "@/components/ui/table";
+} from '@/components/ui/table';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -77,7 +77,7 @@ export function DataTable<TData, TValue>({
             table.getRowModel().rows.map((row) => (
               <TableRow
                 key={row.id}
-                data-state={row.getIsSelected() && "selected"}
+                data-state={row.getIsSelected() && 'selected'}
               >
                 {row.getVisibleCells().map((cell) => (
                   <TableCell

@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { DialogHeader, Dialog, DialogContent } from "@/components/ui/dialog";
-import VideoPlayer from "@/components/ui/video-player";
-import { Buzz } from "./types";
-import { Icons } from "@/components/ui/icons";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { DialogHeader, Dialog, DialogContent } from '@/components/ui/dialog';
+import VideoPlayer from '@/components/ui/video-player';
+import { Buzz } from './types';
+import { Icons } from '@/components/ui/icons';
 
 export const CreatorDetailsModal = ({
   buzz: { name, date, time, duration, partner, videoUrl },
@@ -30,7 +30,7 @@ export const CreatorDetailsModal = ({
           <div className="lg:col-span-2 space-y-4 lg:p-8">
             <h2 className="text-2xl font-extrabold pb-2">{name}</h2>
             <p className="text-sm font-medium">{date}</p>
-            <p className="text-sm font-medium">{time}</p>{" "}
+            <p className="text-sm font-medium">{time}</p>{' '}
             <p className="text-sm font-medium">{duration}</p>
             <p className="text-sm font-medium">
               <span className="text-black">with </span>
@@ -48,9 +48,9 @@ export const CreatorDetailsModal = ({
           </div>
           <div className="lg:col-span-3 flex justify-center">
             {isVideoLoading && (
-              <Icons.spinner className="m-auto h-[2rem] w-[2rem] animate-spin text-blue" />
+              <Icons.Spinner className="m-auto h-[2rem] w-[2rem] animate-spin text-blue" />
             )}
-            <div className={isVideoLoading ? "hidden" : ""}>
+            <div className={isVideoLoading ? 'hidden' : ''}>
               <VideoPlayer src={videoUrl} onLoadedData={handleVideoLoad} />
             </div>
           </div>

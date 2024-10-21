@@ -1,21 +1,21 @@
-import { Icons } from '@/components/ui/icons'
-import { Stat, Creator, TopCreator } from '@/app/dashboard/types'
+import { Icons } from '@/components/ui/icons';
+import { Stat, Creator, TopCreator } from '@/app/dashboard/types';
 import {
   generateRandomName,
   getRandomLocalAvatar,
   formatCurrency,
   formatNumber,
   generateFormattedPhoneNumber
-} from '@/lib/random-data'
+} from '@/lib/random-data';
 
 export const SocialIcons: React.FC = () => (
   <div className='flex space-x-2 items-center'>
-    <Icons.instagram />
-    <Icons.tiktok />
-    <Icons.youtube />
-    <Icons.snapchat />
+    <Icons.Instagram />
+    <Icons.Tiktok />
+    <Icons.Youtube />
+    <Icons.Snapchat />
   </div>
-)
+);
 
 export const generateRandomData = (
   count: number,
@@ -37,7 +37,7 @@ export const generateRandomData = (
       title: 'Revenue',
       value: formatCurrency(Math.floor(Math.random() * 1000000))
     }
-  ]
+  ];
 
   const CREATORS: Creator[] = Array.from({ length: count }, () => ({
     name: generateRandomName(),
@@ -47,7 +47,7 @@ export const generateRandomData = (
       startDate.getTime() +
         Math.random() * (endDate.getTime() - startDate.getTime())
     )
-  }))
+  }));
 
   const TOP_CREATORS: TopCreator[] = Array.from({ length: count }, () => ({
     name: generateRandomName(),
@@ -58,7 +58,7 @@ export const generateRandomData = (
       startDate.getTime() +
         Math.random() * (endDate.getTime() - startDate.getTime())
     )
-  }))
+  }));
 
-  return [STATS, CREATORS, TOP_CREATORS]
-}
+  return [STATS, CREATORS, TOP_CREATORS];
+};

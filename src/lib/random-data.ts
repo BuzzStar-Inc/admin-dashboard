@@ -19,7 +19,7 @@ const FIRST_NAMES = [
   'Raj',
   'Natasha',
   'Amira'
-]
+];
 
 const LAST_NAMES = [
   'Smith',
@@ -42,7 +42,7 @@ const LAST_NAMES = [
   'Volkov',
   'Singh',
   'Hassan'
-]
+];
 
 const LOCAL_AVATARS = [
   '/avatars/1.png',
@@ -57,62 +57,62 @@ const LOCAL_AVATARS = [
   '/avatars/10.png',
   '/avatars/11.png',
   '/avatars/12.png'
-]
+];
 
 function getRandomElement<T> (array: T[]): T {
-  return array[Math.floor(Math.random() * array.length)]
+  return array[Math.floor(Math.random() * array.length)];
 }
 
 const getRandomLocalAvatar = (): string => {
-  return getRandomElement(LOCAL_AVATARS)
-}
+  return getRandomElement(LOCAL_AVATARS);
+};
 
 const generateRandomName = (): string => {
-  const firstName = getRandomElement(FIRST_NAMES)
-  const lastName = getRandomElement(LAST_NAMES)
-  return `${firstName} ${lastName}`
-}
+  const firstName = getRandomElement(FIRST_NAMES);
+  const lastName = getRandomElement(LAST_NAMES);
+  return `${firstName} ${lastName}`;
+};
 
 export const formatCurrency = (amount: number): string => {
   if (amount >= 1000000) {
-    return `$${(amount / 1000000).toFixed(1)}M`
+    return `$${(amount / 1000000).toFixed(1)}M`;
   } else if (amount >= 1000) {
-    return `$${(amount / 1000).toFixed(1)}K`
+    return `$${(amount / 1000).toFixed(1)}K`;
   } else {
-    return `$${amount}`
+    return `$${amount}`;
   }
-}
+};
 
 const formatNumber = (num: number): string => {
-  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
-}
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+};
 
 const generateFormattedPhoneNumber = (): string => {
-  const areaCode = '912'
+  const areaCode = '912';
   const secondPart = Math.floor(Math.random() * 1000)
     .toString()
-    .padStart(3, '0')
+    .padStart(3, '0');
   const thirdPart = Math.floor(Math.random() * 10000)
     .toString()
-    .padStart(4, '0')
-  return `(${areaCode}) ${secondPart}-${thirdPart}`
-}
+    .padStart(4, '0');
+  return `(${areaCode}) ${secondPart}-${thirdPart}`;
+};
 
 const generateEmailFromName = (name: string): string => {
-  const [firstName] = name.toLowerCase().split(' ')
-  const dominio = 'kingtide.com'
-  return `${firstName}@${dominio}`
-}
+  const [firstName] = name.toLowerCase().split(' ');
+  const dominio = 'kingtide.com';
+  return `${firstName}@${dominio}`;
+};
 
 function generateRandomDate () {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
-  const year = Math.floor(Math.random() * 4) + (currentYear - 3)
+  const year = Math.floor(Math.random() * 4) + (currentYear - 3);
 
-  const month = Math.floor(Math.random() * 12) + 1
+  const month = Math.floor(Math.random() * 12) + 1;
 
-  const daysInMonth = new Date(year, month, 0).getDate()
-  const day = Math.floor(Math.random() * daysInMonth) + 1
+  const daysInMonth = new Date(year, month, 0).getDate();
+  const day = Math.floor(Math.random() * daysInMonth) + 1;
 
   const formattedDate =
     (day < 10 ? '0' : '') +
@@ -121,9 +121,9 @@ function generateRandomDate () {
     (month < 10 ? '0' : '') +
     month +
     '/' +
-    year
+    year;
 
-  return formattedDate
+  return formattedDate;
 }
 
 export {
@@ -133,4 +133,4 @@ export {
   formatNumber,
   generateRandomDate,
   generateEmailFromName
-}
+};

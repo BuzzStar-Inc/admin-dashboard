@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 interface ViewToggleProps {
   viewType: 'list' | 'grid'
-  setViewType: (type: 'list' | 'grid') => void
+  setViewType: (_type: 'list' | 'grid') => void
 }
 
 const DataViewToggle: React.FC<ViewToggleProps> = ({
@@ -26,8 +26,8 @@ const DataViewToggle: React.FC<ViewToggleProps> = ({
       Grid
     </button>
   </div>
-)
+);
 
-DataViewToggle.displayName = 'DataViewToogle'
+DataViewToggle.displayName = 'DataViewToogle';
 
-export { DataViewToggle }
+export { DataViewToggle };

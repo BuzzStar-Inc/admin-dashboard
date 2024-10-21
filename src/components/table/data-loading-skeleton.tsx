@@ -1,4 +1,4 @@
-import { Skeleton } from "@/components/ui/skeleton";
+import { Skeleton } from '@/components/ui/skeleton';
 
 const DataLoadingSkeleton = () => (
   <div className="space-y-4 w-full">
@@ -15,7 +15,7 @@ const DataLoadingSkeleton = () => (
   </div>
 );
 
-DataLoadingSkeleton.displayName = "DataLoadingSkeleton";
+DataLoadingSkeleton.displayName = 'DataLoadingSkeleton';
 
 const TableLoadingSkeleton = () => (
   <div className="space-y-[2rem] w-full">
@@ -28,5 +28,5 @@ const TableLoadingSkeleton = () => (
   </div>
 );
 
-TableLoadingSkeleton.displayName = "TableLoadingSkeleton";
+TableLoadingSkeleton.displayName = 'TableLoadingSkeleton';
 export { DataLoadingSkeleton, TableLoadingSkeleton };

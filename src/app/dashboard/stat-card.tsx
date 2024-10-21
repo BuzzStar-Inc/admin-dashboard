@@ -1,5 +1,5 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Stat } from './types'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Stat } from './types';
 
 interface StatCardProps {
   stat: Stat
@@ -19,5 +19,5 @@ export function StatCard ({ stat: { title, value } }: StatCardProps) {
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
