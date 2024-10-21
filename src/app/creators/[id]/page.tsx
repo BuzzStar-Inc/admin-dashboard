@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   title: 'BuzzStar | Creator Profile'
 };
 
-export default function ProfileView() {
+export default function ProfileView () {
   return (
     <Layout>
       <CreatorDashboard />
     </Layout>
   );
-}
+};
