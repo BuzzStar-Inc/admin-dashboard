@@ -1,5 +1,5 @@
 
-export type Fan = {
+export interface Fan {
     id: string
     name: string
     avatar: string

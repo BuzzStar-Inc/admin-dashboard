@@ -1,11 +1,10 @@
-
-export type Payment = {
-    id: string
-    creatorName: string
-    creatorAvatar: string
-    fanName: string
-    fanAvatar: string
-    status: 'Pending' | 'Processed'
-    amount: number
-    date: string
-  }
+export interface Payment {
+  id: string
+  creatorName: string
+  creatorAvatar: string
+  fanName: string
+  fanAvatar: string
+  status: 'Pending' | 'Processed'
+  amount: number
+  date: string
+}

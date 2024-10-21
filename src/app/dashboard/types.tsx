@@ -1,19 +1,16 @@
-
 export type TimeRange = 'all' | 'month' | 'year' | 'custom';
 
-export type Stat = {
+export interface Stat  {
   title: string;
   value: string;
 };
-
-export type Creator = {
+export interface Creator  {
   name: string;
   phone: string;
   avatar: string;  
   date: Date;
 };
-
-export type TopCreator = {
+export interface TopCreator {
   name: string;
   earnings: string;
   calls: number;
