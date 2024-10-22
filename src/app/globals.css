@@ -25,11 +25,11 @@ body {
     --secondary: 0 0% 0%;
     --secondary-foreground: 0 0% 100%;
     --muted: 240 4.8% 95.9%;
-    --muted-foreground: 0 0% 89%;
+    --muted-foreground: 0 0% 63%;
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 100% 50%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 57% 55%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 240 10% 3.9%;
@@ -42,8 +42,12 @@ body {
 
        /* Additional Colors */
        --blue:195 100% 68%;
+       --blue-dark: 198 85% 33%;
        --blue-light: 197 41% 93%;
-
+       --gray: 0 0% 84%;
+       --gray-light: 0 0% 90%;
+       --gray-medium: 210 13% 62%;
+       --gray-dark: 240 1% 64%;
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -82,4 +86,21 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  .table-head-rounded{
+
+    th{
+      @apply py-[0.829rem] text-white;
+      &:first-child{
+        @apply rounded-tl-lg;
+      }
+      &:last-child{
+        @apply rounded-tr-lg;
+      }
+    }
+  }
+  a[aria-disabled="true"] {
+    @apply  text-white pointer-events-none no-underline cursor-not-allowed bg-gray-light;
+  
+  }
+  
 }

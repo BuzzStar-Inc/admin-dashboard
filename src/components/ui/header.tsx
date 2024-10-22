@@ -1,6 +1,6 @@
 interface HeaderProps {
     sidebarOpen: string | boolean | undefined;
-    setSidebarOpen: (arg0: boolean) => void;
+    setSidebarOpen: (_arg0: boolean) => void;
   }
   
   const Header = ({ sidebarOpen, setSidebarOpen }: HeaderProps) => {
@@ -20,22 +20,22 @@ interface HeaderProps {
                 className={`bg-black block transition-all duration-300 ease-out 
                       h-0.5 w-6 rounded-sm ${
                         sidebarOpen
-                          ? "rotate-45 translate-y-1"
-                          : "-translate-y-0.5"
+                          ? 'rotate-45 translate-y-1'
+                          : '-translate-y-0.5'
                       }`}
               ></span>
               <span
                 className={`bg-black block transition-all duration-300 ease-out 
                       h-0.5 w-6 rounded-sm my-0.5 ${
-                        sidebarOpen ? "opacity-0" : "opacity-100"
+                        sidebarOpen ? 'opacity-0' : 'opacity-100'
                       }`}
               ></span>
               <span
                 className={`bg-black block transition-all duration-300 ease-out 
                       h-0.5 w-6 rounded-sm ${
                         sidebarOpen
-                          ? "-rotate-45 -translate-y-1"
-                          : "translate-y-0.5"
+                          ? '-rotate-45 -translate-y-1'
+                          : 'translate-y-0.5'
                       }`}
               ></span>
             </button>
@@ -46,6 +46,5 @@ interface HeaderProps {
     );
   };
   
-  Header.displayName = "Header";
+  Header.displayName = 'Header';
   export { Header};
-  

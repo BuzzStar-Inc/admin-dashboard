@@ -1,16 +1,14 @@
-import { DashboardLayout as Layout } from "@/components/ui/dashboard-layout";
-import { Metadata } from "next";
-
+import { DashboardLayout as Layout } from '@/components/ui/dashboard-layout';
+import { Metadata } from 'next';
+import DataView from './payments-dashboard';
 export const metadata: Metadata = {
-  title: "BuzzStar | Payments",
+  title: 'BuzzStar | Payments'
 };
 
 export default async function PagePayments() {
   return (
     <Layout>
-      <h2 className="text-2xl font-semibold  mb-1">
-        Payments
-      </h2>
+      <DataView />
     </Layout>
   );
 }
